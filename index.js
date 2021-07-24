@@ -15,7 +15,7 @@ client.on("ready", () => {
   })
 
   client.on('guildMemberAdd', async (member) => {
-    client.channels.cache.get('868567522570539018').send(`<a:mariostar:868574927920431104> ***Welcome to Cow's Pasture!!*** <a:mariostar:868574927920431104>\nYou're currently **unverified!** \nPlease check <#806322270514970634> to verify yourself! \n||<@${member.id}>||`);
+    client.channels.cache.get('868584955138179194').send(`<a:mariostar:868574927920431104> ***Welcome to Cow's Pasture!!*** <a:mariostar:868574927920431104>\nYou're currently **unverified!** \nPlease check <#806322270514970634> to verify yourself! \n||<@${member.id}>||`);
   });
 
 client.login(config.token)
