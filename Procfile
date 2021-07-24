@@ -1,1 +1,1 @@
-Moo: node main.js
+Moo: node index.js
