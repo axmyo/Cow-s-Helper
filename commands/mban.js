@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
     if (args[1]) reason = args.splice(1).join(" ");
 	if (!target.bannable) return message.reply('Can\'t ban specified member! Make sure I\'m above them in the heirarchy', { allowedMentions: { repliedUser: false } });
 
-			await target.ban({ reason: reason }, ({ days: 4 }));
+			await target.ban({ reason: reason }, ({ days: 1 }));
 			const banEmbed = new MessageEmbed()
 				 .setColor("#ff0000")
                                  .setFooter(message.guild.name, message.guild.iconURL())
