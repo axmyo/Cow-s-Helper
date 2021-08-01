@@ -1,7 +1,7 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
-        let mbann = await client.channels.fetch('828578677150580747')
+        let mbann = await client.channels.fetch('868645138770051152')
 	if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('I don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
 	if(!message.member.hasPermission('BAN_MEMBERS') && message.author.id != "550692171531943956") return message.reply("no, get ban perms man");
 	if (!args[0]) return message.reply('Provide someone to ban!', { allowedMentions: { repliedUser: false } });
