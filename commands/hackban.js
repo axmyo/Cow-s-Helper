@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 
-exports.run = (client, message, args) => { 
+exports.run = async (client, message, args) => { 
         let logs = await client.channels.fetch('868645138770051152')
         const target = args[0];
         if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('I don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
