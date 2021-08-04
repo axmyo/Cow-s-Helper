@@ -1,7 +1,7 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
-
+        let logs = await client.channels.fetch('868645138770051152')
 	if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('I don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
         if(!message.member.hasPermission('BAN_MEMBERS') && message.author.id != "550692171531943956") return message.reply("no, get ban perms man");
 	if (!args[0]) return message.reply('Provide someone to ban!', { allowedMentions: { repliedUser: false } });
@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
     let reason = "No reason provided.";
     if (args[1]) reason = args.splice(1).join(" ");
 	if (!target.bannable) return message.reply('Can\'t ban specified member! Make sure I\'m above them in the heirarchy', { allowedMentions: { repliedUser: false } });
-
+         message.delete()
 			await target.ban({ reason: reason });
 			const banEmbed = new MessageEmbed()
 				 .setColor("#ff0000")
@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
                                  .addField("**Reason**", `${reason || "**No Reason**"}`)
                                  .addField("**Date**", message.createdAt.toLocaleString())
                                  .setTimestamp();
-			message.channel.send(banEmbed)
+			logs.send(banEmbed)
 		}
 	
 
