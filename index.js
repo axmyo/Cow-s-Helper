@@ -16,7 +16,7 @@ client.on("ready", () => {
   })
 
   client.on('guildMemberAdd', async (member) => {
-    client.channels.cache.get('868584955138179194').send(`<a:mariostar:868574927920431104> ***Welcome to Cow's Pasture!!*** <a:mariostar:868574927920431104>\n <@${member.id}> You're currently **unverified!** \nPlease check <#806322270514970634> to verify yourself!`);
+    client.channels.cache.get('874694781882744852').send(` <a:mariostar:868574927920431104>Welcome <@${member.id}> to Cow's pasture! \nMake sure to go to <#874694997805518938> to choose your roles! <a:mariostar:868574927920431104>`);
   });
   client.commands = new Discord.Collection();
   client.aliases = new Discord.Collection();
