@@ -114,7 +114,6 @@ const BannedWords = [
   ]
 
 client.on("message", message => {
-    if (mods.includes(message.author.id)) return;
     var content = message.content
     var stringToCheck = content.replace(/\s+/g, '')
     let reason = "Banned words";
