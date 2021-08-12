@@ -49,5 +49,84 @@ client.on("ready", () => {
 
 })
   
+const BannedWords = [
+    "nigger",
+    "nigga",
+    "niger",
+    "niggga",
+    "niggger",
+    "n1gg",
+    "n1g",
+    "n1gger",
+    "nigg3r",
+    "n1gg3r",
+    "n1ga",
+    "nig",
+    "nigg",
+    "niga",
+    "niggar",
+    "negro",
+    "n1gg4r",
+    "negr0",
+    "n3gr0",
+    "ni🅱🅱a",
+    "n1🅱🅱a",
+    "n1🅱🅱er",
+    "ni🅱🅱er",
+    "n1🅱🅱3r",
+    "ni🅱🅱3r",
+    "ni🇧🇧a",
+    "n1🇧🇧a",
+    "n1🇧🇧er",
+    "ni🇧🇧er",
+    "n1🇧🇧3r",
+    "ni🇧🇧3r",
+    "Nigga",
+    "nIgga",
+    "niGga",
+    "nigGa",
+    "niggA",
+    "NIgga",
+    "NIGga",
+    "NIGGa",
+    "NIGGA",
+    "NIGGGA",
+    "Nigger",
+    "nIgger",
+    "niGger",
+    "nigGer",
+    "niggEr",
+    "niggeR",
+    "NIgger",
+    "NIGger",
+    "NIGGer",
+    "NIGGEr",
+    "NIGGER",
+    "nigger",
+    "fuck you all",
+    "fuck yall",
+    "go die",
+    "kys",
+    "kill your self",
+    "ya'll will die",
+    "Cock",
+    "cock"
+  ]
+
+client.on("message", message => {
+    if (mods.includes(message.author.id)) return;
+    var content = message.content
+    var stringToCheck = content.replace(/\s+/g, '')
+    let reason = "Banned words";
+    
+    for (var i = 0; i < BannedWords.length; i++) {
+        if (content.includes(BannedWords[i])){  
+          message.delete()
+          message.member.ban({ reason: reason })
+            break
+        }
+    }
+  })
+
 
 client.login(config.token)
