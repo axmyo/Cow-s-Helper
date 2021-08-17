@@ -107,8 +107,6 @@ const BannedWords = [
     "kys",
     "kill your self",
     "ya'll will die",
-    "Cock",
-    "cock"
   ]
 
 client.on("message", message => {
