@@ -16,7 +16,7 @@ client.on("ready", () => {
   })
 
   client.on('guildMemberAdd', async (member) => {
-    client.channels.cache.get('868584955138179194').send(`<a:mariostar:868574927920431104> ***Welcome to Cow's Pasture!!*** <a:mariostar:868574927920431104>\n <@${member.id}> You're currently **unverified!** \nPlease check <#806322270514970634> to verify yourself!`);
+    client.channels.cache.get('874694781882744852').send(` <a:mariostar:868574927920431104> <@${member.id}> Welcome to Cow's pasture! \nMake sure to go to <#874694997805518938> to choose your roles! <a:mariostar:868574927920431104>`);
   });
   client.commands = new Discord.Collection();
   client.aliases = new Discord.Collection();
@@ -49,5 +49,81 @@ client.on("ready", () => {
 
 })
   
+const BannedWords = [
+    "nigger",
+    "nigga",
+    "niger",
+    "niggga",
+    "niggger",
+    "n1gg",
+    "n1g",
+    "n1gger",
+    "nigg3r",
+    "n1gg3r",
+    "n1ga", 
+    "niga",
+    "niggar",
+    "negro",
+    "n1gg4r",
+    "negr0",
+    "n3gr0",
+    "ni🅱🅱a",
+    "n1🅱🅱a",
+    "n1🅱🅱er",
+    "ni🅱🅱er",
+    "n1🅱🅱3r",
+    "ni🅱🅱3r",
+    "ni🇧🇧a",
+    "n1🇧🇧a",
+    "n1🇧🇧er",
+    "ni🇧🇧er",
+    "n1🇧🇧3r",
+    "ni🇧🇧3r",
+    "Nigga",
+    "nIgga",
+    "niGga",
+    "nigGa",
+    "niggA",
+    "NIgga",
+    "NIGga",
+    "NIGGa",
+    "NIGGA",
+    "NIGGGA",
+    "Nigger",
+    "nIgger",
+    "niGger",
+    "nigGer",
+    "niggEr",
+    "niggeR",
+    "NIgger",
+    "NIGger",
+    "NIGGer",
+    "NIGGEr",
+    "NIGGER",
+    "nigger",
+    "fuck you all",
+    "fuck yall",
+    "go die",
+    "kys",
+    "kill your self",
+    "ya'll will die",
+    "retard",
+    "retarded"
+  ]
+
+client.on("message", message => {
+    var content = message.content
+    var stringToCheck = content.replace(/\s+/g, '')
+    let reason = "Banned words";
+    
+    for (var i = 0; i < BannedWords.length; i++) {
+        if (content.includes(BannedWords[i])){  
+          message.delete()
+          message.member.ban({ reason: reason })
+            break
+        }
+    }
+  })
+
 
 client.login(config.token)
