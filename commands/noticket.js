@@ -7,8 +7,9 @@ module.exports.run = async (client, message, args) => {
     message.guild.roles.fetch('881981815232008274')
             .then(role => {
                     let member = message.mentions.members.first();
+                    if(permitted.includes(member.id)) return;
                     member.roles.add(role).catch(console.error);
+                    message.channel.send(`<@${message.author.id}> Done.`)
                 })
             .catch(console.error);
-        message.channel.send(`<@${message.author.id}> Done.`)
 		}
