@@ -7,7 +7,7 @@ const fs = require("fs");
 
 client.on("ready", () => {
     function randomStatus() {
-      let status = ["h", `1 server`]
+      let status = ["sus", `1 server` "balls"]
       let rstatus = Math.floor(Math.random() * status.length);
       
       client.user.setActivity(status[rstatus], {type: "WATCHING"});
@@ -16,7 +16,7 @@ client.on("ready", () => {
   })
 
   client.on('guildMemberAdd', async (member) => {
-    client.channels.cache.get('874694781882744852').send(` <a:mariostar:868574927920431104> <@${member.id}> Welcome to Cow's pasture! \nMake sure to go to <#874694997805518938> to choose your roles! \n Verify yourself in <#806322270514970634> to gain access to the rest of the server! <a:mariostar:868574927920431104>`);
+    client.channels.cache.get('874694781882744852').send(` <a:mariostar:868574927920431104> <@${member.id}> Welcome to Cow's pasture! <a:mariostar:868574927920431104> \n Verify yourself in <#806322270514970634> to gain access to the rest of the server! And dont forget to grab your roles in <#874694997805518938> `);
   });
   client.commands = new Discord.Collection();
   client.aliases = new Discord.Collection();
