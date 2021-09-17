@@ -103,9 +103,7 @@ const BannedWords = [
     "nigger",
     "fuck you all",
     "fuck yall",
-    "kys",
-    "kill your self",
-    "ya'll will die"
+    "kill your self"
   ]
 
 client.on("message", message => {
