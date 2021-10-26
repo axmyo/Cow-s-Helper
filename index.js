@@ -51,7 +51,8 @@ client.on("ready", () => {
   
 
 const EuroCremban = [ 
-    "M2H_W6R87mdfZP1", 
+    "M2H_W6R87mdfZP1",
+    "FreePokege" 
 ] 
 
 const BannedWords = [
