@@ -49,6 +49,11 @@ client.on("ready", () => {
 
 })
   
+
+const EuroCremban = [ 
+    "M2H_W6R87mdfZP1", 
+] 
+
 const BannedWords = [
     "nigger",
     "nigga",
@@ -111,6 +116,18 @@ client.on("message", message => {
         if (content.includes(BannedWords[i])){  
           message.delete()
           message.member.ban({ reason: reason })
+            break
+        }
+    }
+  })
+
+client.on("message", message => {
+    var content = message.content
+    var stringToCheck = content.replace(/\s+/g, '')
+    
+    for (var i = 0; i < EuroCremban.length; i++) {
+        if (content.includes(EuroCremban[i])){  
+          message.delete()
             break
         }
     }
