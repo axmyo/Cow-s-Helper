@@ -16,7 +16,7 @@ client.on("ready", () => {
   })
 
   client.on('guildMemberAdd', async (member) => {
-    client.channels.cache.get('874694781882744852').send(` <a:MarioStar:864191172229726208> <@${member.id}> Welcome to Cow's pasture! <a:MarioStar:864191172229726208> \n Verify yourself in <#806322270514970634> to gain access to the rest of the server! And dont forget to grab your roles in <#874694997805518938> `);
+    client.channels.cache.get('874694781882744852').send(` <a:MarioStar:864191172229726208> <@${member.id}> Welcome to Cow's pasture! <a:MarioStar:864191172229726208> \n Verify yourself in <#903550849819742239> to gain access to the rest of the server! And dont forget to grab your roles in <#874694997805518938> `);
   });
   client.commands = new Discord.Collection();
   client.aliases = new Discord.Collection();
