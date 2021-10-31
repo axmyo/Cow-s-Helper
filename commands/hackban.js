@@ -1,16 +1,14 @@
 const { MessageEmbed } = require("discord.js");
 
 
+
 exports.run = async (client, message, args) => { 
         let logs = await client.channels.fetch('868645138770051152')
         const target = args[0];
         if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('I don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
         if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('You don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
-        if (isNaN(target)) return message.reply(`Please specify an ID`); 
-        if(target.roles.cache.has("742803994816020503"))
-
-let reason = "No reason provided.";
-    if (args[1]) reason = args.splice(1).join(" ");
+        if (isNaN(target)) return message.reply(`Please specify an ID`);
+        const reason   = args.splice(1, args.length).join(' ');
 
             try {
                 message.guild.members.ban(target, {reason: reason.length < 1 ? 'No reason supplied.': reason});            
