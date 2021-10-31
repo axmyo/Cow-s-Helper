@@ -9,7 +9,8 @@ exports.run = async (client, message, args) => {
         if (isNaN(target)) return message.reply(`Please specify an ID`); 
         if(target.roles.cache.has("742803994816020503"))
 
-let reason = args.splice(1, args.length).join(' ');
+let reason = "No reason provided.";
+    if (args[1]) reason = args.splice(1).join(" ");
 
             try {
                 message.guild.members.ban(target, {reason: reason.length < 1 ? 'No reason supplied.': reason});            
