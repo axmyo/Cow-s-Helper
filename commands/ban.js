@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 	if(target.id === message.author.id) return message.reply('Why would you want to ban yourself?!', { allowedMentions: { repliedUser: false } });
 	if(target.id === client.user.id) return message.reply('Why would you want to ban me?!', { allowedMentions: { repliedUser: false } });
         if(target.roles.cache.has("742803994816020503 ")) {
-    return
+    return message.reply("That's a mod, no.")
 }
     let reason = "No reason provided.";
     if (args[1]) reason = args.splice(1).join(" ");
