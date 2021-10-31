@@ -6,9 +6,10 @@ exports.run = async (client, message, args) => {
         const target = args[0];
         if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('I don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
         if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('You don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
-        if (isNaN(target)) return message.reply(`Please specify an ID`);
-                if(target.roles.cache.has("742803994816020503"))
-const reason   = args.splice(1, args.length).join(' ');
+        if (isNaN(target)) return message.reply(`Please specify an ID`); 
+        if(target.roles.cache.has("742803994816020503"))
+
+let reason = args.splice(1, args.length).join(' ');
 
             try {
                 message.guild.members.ban(target, {reason: reason.length < 1 ? 'No reason supplied.': reason});            
