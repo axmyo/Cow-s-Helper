@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
         if (!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('I don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
         if (!message.member.hasPermission('BAN_MEMBERS')) return message.reply('You don\'t have permission to ban members!', { allowedMentions: { repliedUser: false } });
         if (isNaN(target)) return message.reply(`Please specify an ID`);
-        if(target.roles.cache.has("742803994816020503")) return message.reply("That's a mod, no.")
+       
 
 
  let reason = "No reason provided.";
