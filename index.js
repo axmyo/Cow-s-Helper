@@ -52,7 +52,8 @@ client.on("ready", () => {
 
 const EuroCremban = [ 
     "M2H_W6R87mdfZP1",
-    "FreePokege" 
+    "FreePokege", 
+    "https://tenor.com/view/repost-if-add-fart-channel-gif-19348669" 
 ] 
 
 const BannedWords = [
