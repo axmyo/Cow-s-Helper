@@ -15,9 +15,6 @@ client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`)
   })
 
-  client.on('guildMemberAdd', async (member) => {
-    client.channels.cache.get('874694781882744852').send(` <a:MarioStar:864191172229726208> <@${member.id}> Welcome to Cow's pasture! <a:MarioStar:864191172229726208> \n Verify yourself in <#903550849819742239> to gain access to the rest of the server! And dont forget to grab your roles in <#874694997805518938> `);
-  });
   client.commands = new Discord.Collection();
   client.aliases = new Discord.Collection();
 
@@ -50,10 +47,11 @@ client.on("ready", () => {
 })
   
 
-const EuroCremban = [ 
+const bwords = [ 
     "M2H_W6R87mdfZP1",
     "FreePokege", 
-    "https://tenor.com/view/repost-if-add-fart-channel-gif-19348669" 
+    "https://tenor.com/view/repost-if-add-fart-channel-gif-19348669",
+    "axmo" //fuck you steak
 ] 
 
 const BannedWords = [
@@ -127,8 +125,8 @@ client.on("message", message => {
     var content = message.content
     var stringToCheck = content.replace(/\s+/g, '')
     
-    for (var i = 0; i < EuroCremban.length; i++) {
-        if (content.includes(EuroCremban[i])){  
+    for (var i = 0; i < bwords.length; i++) {
+        if (content.includes(bwords[i])){  
           message.delete()
             break
         }
