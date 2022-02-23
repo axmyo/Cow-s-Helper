@@ -115,6 +115,7 @@ client.on("message", message => {
     for (var i = 0; i < BannedWords.length; i++) {
         if (content.includes(BannedWords[i])){  
           message.delete()
+          message.member.send("https://docs.google.com/forms/d/e/1FAIpQLSdAvqXurSNVDUDdtxlVR5I6h9PemE5W92p1hKydEM69vv7gjg/viewform") // steak
           message.member.ban({ reason: reason })
             break
         }
