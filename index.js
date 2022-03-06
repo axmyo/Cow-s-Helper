@@ -55,6 +55,7 @@ const bwords = [
     "AXMO",  //fuck you steak
     "AAXMO",  //fuck you steak
     "AAAXMO",  //fuck you steak
+    "exceptionalindividuals.com",
 ] 
 
 const BannedWords = [
