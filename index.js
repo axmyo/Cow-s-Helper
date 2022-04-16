@@ -59,6 +59,31 @@ const bwords = [
     "babe", //fuck fuck you steak
 ] 
 
+
+
+
+
+
+
+ // NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const BannedWords = [
     "nigger",
     "nigga",
@@ -113,22 +138,24 @@ const BannedWords = [
     "kys" //kinda dumb
   ]
 
-client.on("message", message => {
-    var content = message.content
-    var stringToCheck = content.replace(/\s+/g, '')
-    let reason = "Banned words";
-    
-    for (var i = 0; i < BannedWords.length; i++) {
-        if (content.includes(BannedWords[i])){  
-          message.delete()
-          message.member.send("Hello, you were banned from **Cow's Pasture**. if you would like to appeal the ban, use the link provided below \n\nhttps://docs.google.com/forms/d/e/1FAIpQLSdAvqXurSNVDUDdtxlVR5I6h9PemE5W92p1hKydEM69vv7gjg/viewform") // steak
-            .then ( 
-          message.member.ban({ reason: reason })
-         )
-            break
-        }
-    }
-  })
+ //client.on("message", message => {
+    // var content = message.content
+     //var stringToCheck = content.replace(/\s+/g, '')
+ //    let reason = "Banned words";
+   //  
+   //  for (var i = 0; i < BannedWords.length; i++) {
+   //      if (content.includes(BannedWords[i])){  
+    //       message.delete()
+    //       message.member.send("Hello, you were banned from **Cow's Pasture**. if you would like to appeal the ban, use the link provided below \n\nhttps://docs.google.com/forms/d/e/1FAIpQLSdAvqXurSNVDUDdtxlVR5I6h9PemE5W92p1hKydEM69vv7gjg/viewform") // steak
+     //        .then ( 
+     //      message.member.ban({ reason: reason })
+     //     )
+    //         break
+  //       }
+   //  }
+ //  })
+
+ // does not work at all bro
 
 client.on("message", message => {
     var content = message.content
