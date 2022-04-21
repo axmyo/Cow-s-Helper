@@ -6,6 +6,6 @@ exports.run = async (client, message, args, level) => {
                    const helpmenu = new Discord.MessageEmbed();
                    helpmenu.setColor("PINK");
                    helpmenu.setTitle ('Command List')
-                  helpmenu.addField("STINK", " `ban` `hackban` `mban` `slowmode` `unban`");
+                  helpmenu.addField("STINK", " `ban` `hackban` `mban` `slowmode` `unban` `wrole` `worole`");
                    message.channel.send(helpmenu);
 }
