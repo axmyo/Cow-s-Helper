@@ -33,6 +33,18 @@ client.on("ready", () => {
   });
   
   client.on("message", async message => {
+    
+    if((message.author.bot) && (message.channel.name.includes('ticket')) && (message.mentions.users) && (message.author.id === "557628352828014614")){
+      for (let embed of message.embeds) {
+        if(embed.description.includes('Support will be with you shortly.')){
+          let member = message.mentions.members.first();
+          if (!member.roles.cache.some(role => role.name === 'Calves')){
+            message.channel.send("Hello <@" + message.mentions.users.first().id + "> I see you have no roles, please head on over to the rules channel and react to it in order to gain access to the rest of the server.");
+          } 
+        }
+      }
+    }
+
     if(message.author.bot || message.channel.type === "dm") return;
 
     let prefix = ("<");
