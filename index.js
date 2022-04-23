@@ -7,7 +7,7 @@ const fs = require("fs");
 
 client.on("ready", () => {
     function randomStatus() {
-      let status = ["steak"]
+      let status = ["among us"]
       let rstatus = Math.floor(Math.random() * status.length);
       
       client.user.setActivity(status[rstatus], {type: "WATCHING"});
