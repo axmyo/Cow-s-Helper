@@ -39,7 +39,18 @@ client.on("ready", () => {
         if(embed.description.includes('Support will be with you shortly.')){
           let member = message.mentions.members.first();
           if (!member.roles.cache.some(role => role.name === 'Calves')){
-            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, I see you have no roles, please head on over to the <#806322270514970634> channel and react with :white_check_mark: in order to gain access to the rest of the server.");
+            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI see you have no roles, please head on over to the <#806322270514970634> channel and react with :white_check_mark: in order to gain access to the rest of the server. \n\nIf that all, you can close this ticket, but if you need more help & it's urgent, ping a staff member (that is online.)");
+          } 
+        }
+      }
+    }
+    
+      if((message.author.bot) && (message.channel.name.includes('ticket')) && (message.mentions.users) && (message.author.id === "557628352828014614")){
+      for (let embed of message.embeds) {
+        if(embed.description.includes('Support will be with you shortly.')){
+          let member = message.mentions.members.first();
+          if (member.roles.cache.some(role => role.name === 'Calves')){
+            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI can see that you're already verified. Therefore, please state the reason why you opened this ticket. Support will be with you shortly. \n\n ||<&@967688091269746688>||");
           } 
         }
       }
