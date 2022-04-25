@@ -39,7 +39,7 @@ client.on("ready", () => {
         if(embed.description.includes('Support will be with you shortly.')){
           let member = message.mentions.members.first();
           if (!member.roles.cache.some(role => role.name === 'Calves')){
-            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI see you have no roles, please head on over to the <#806322270514970634> channel and react with :white_check_mark: in order to gain access to the rest of the server. \n\nIf that all, you can close this ticket, but if you need more help, feel free to ping a staff member. **Please DON'T ping offline staff.**");
+            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI see you have no roles, please head on over to the <#806322270514970634> channel and react with :white_check_mark: in order to gain access to the rest of the server. \n\nIf that all, you can close this ticket, but if you need more help, feel free to ping a staff member. \n\n**Please DO NOT ping offline staff.**");
           } 
         }
       }
