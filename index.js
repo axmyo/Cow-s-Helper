@@ -50,7 +50,7 @@ client.on("ready", () => {
         if(embed.description.includes('Support will be with you shortly.')){
           let member = message.mentions.members.first();
           if (member.roles.cache.some(role => role.name === 'Calves')){
-            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI can see that you're already verified. Therefore, please state the reason why you opened this ticket. Support will be with you shortly. \n\n ||<&@967688091269746688>||");
+            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI can see that you're already verified. Therefore, please state the reason why you opened this ticket. Support will be with you shortly. \n\n ||<@&967688091269746688>||");
           } 
         }
       }
