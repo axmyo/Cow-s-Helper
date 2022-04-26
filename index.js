@@ -51,7 +51,9 @@ client.on("ready", () => {
             message.channel.send("$transcript")
           } 
          if(embed.description.includes('Transcipt saving')){   
-            message.channel.delete()
+            setTimeout(function(){ 
+           message.channel.delete(); 
+          }, 1500);
           } 
         }
       }
