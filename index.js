@@ -51,6 +51,8 @@ client.on("ready", () => {
           if(embed.description.includes('Support team ticket controls')){   
             message.channel.send("$transcript") 
           }
+          
+          await new Promise(r => setTimeout(r, 2000));
           if(embed.description.includes('Transcript')){   
             message.channel.delete();
           }
