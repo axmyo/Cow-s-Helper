@@ -50,8 +50,10 @@ client.on("ready", () => {
         if(embed.description.includes('Support team ticket controls')){   
             message.channel.send("$transcript")
           } 
-         if(embed.description.includes('Transcript saved to <#864780780109692969>')){   
-            message.channel.delete()
+         if(embed.description.includes('Transcipt saving')){   
+            setTimeout(function(){ 
+           message.channel.delete(); 
+          }, 1500);
           } 
         }
       }
