@@ -45,23 +45,16 @@ client.on("ready", () => {
       }
     }
     
-      if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
+    if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
       for (let embed of message.embeds) {
         if(embed.description.includes('Support team ticket controls')){   
             message.channel.send("$transcript") 
-          }
+        }
+        if(embed.description.includes('Transcript saved to')){   
+          message.channel.delete();
         }
       }
-    
-        if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
-      for (let embed of message.embeds) {
-         if(embed.description.includes('Transcipt saving')){   
-            setTimeout(function(){ 
-     message.channel.delete()
- }, 2000); 
-          }
-        }
-      }
+    }
 
     if(message.author.bot || message.channel.type === "dm") return;
 
