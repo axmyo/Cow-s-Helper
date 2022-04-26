@@ -50,6 +50,12 @@ client.on("ready", () => {
         if(embed.description.includes('Support team ticket controls')){   
             message.channel.send("$transcript")
           } 
+          } 
+        }
+      }
+    
+        if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
+      for (let embed of message.embeds) {
          if(embed.description.includes('Transcipt saving')){   
             setTimeout(function(){ 
      message.channel.delete
