@@ -57,7 +57,7 @@ client.on("ready", () => {
       for (let embed of message.embeds) {
          if(embed.description.includes('Transcipt saving')){   
             setTimeout(function(){ 
-     message.channel.delete
+     message.channel.delete()
  }, 2000); 
           }
         }
@@ -87,6 +87,7 @@ const bwords = [
     "AAAXMO",  //fuck you steak
     "exceptionalindividuals.com",
     "babe", //fuck fuck you steak
+    "axmy", //fuck fuck you steak
 ] 
 
 
