@@ -52,8 +52,8 @@ client.on("ready", () => {
           } 
          if(embed.description.includes('Transcipt saving')){   
             setTimeout(function(){ 
-           message.channel.delete(); 
-          }, 1500);
+     message.channel.delete
+ }, 2000); 
           } 
         }
       }
