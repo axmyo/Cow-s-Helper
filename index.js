@@ -60,7 +60,7 @@ client.on("ready", () => {
             setTimeout(function(){ 
      message.channel.delete
  }, 2000); 
-          } 
+          }) 
         }
       }
         
