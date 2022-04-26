@@ -45,16 +45,14 @@ client.on("ready", () => {
       }
     }
     
-      if((message.author.bot) && (message.channel.name.includes('ticket')) && (message.mentions.users) && (message.author.id === "557628352828014614")){
+      if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
       for (let embed of message.embeds) {
-        if(embed.description.includes('Support will be with you shortly.')){
-          let member = message.mentions.members.first();
-          if (member.roles.cache.some(role => role.name === 'Calves')){
-            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI can see that you're already verified. Therefore, please state the reason why you opened this ticket. Support will be with you shortly. \n\n ||<@&967688091269746688>||");
+        if(embed.description.includes('Ticket Closed by')){   
+            message.channel.send("$transcript")
           } 
         }
       }
-    }
+        
 
     if(message.author.bot || message.channel.type === "dm") return;
 
