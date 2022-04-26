@@ -47,11 +47,13 @@ client.on("ready", () => {
     
     if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
       for (let embed of message.embeds) {
-        if(embed.description.includes('Support team ticket controls')){   
+        if(embed){
+          if(embed.description.includes('Support team ticket controls')){   
             message.channel.send("$transcript") 
-        }
-        if(embed.description.includes('Transcript saved to')){   
-          message.channel.delete();
+          }
+          if(embed.description.includes('Transcript')){   
+            message.channel.delete();
+          }
         }
       }
     }
