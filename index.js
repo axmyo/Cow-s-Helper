@@ -57,7 +57,7 @@ client.on("ready", () => {
       for (let embed of message.embeds) {
          if(embed.description.includes('Transcipt saving')){   
             setTimeout(function(){ 
-     message.channel.delete
+     message.channel.delete()
  }, 2000); 
           }
         }
