@@ -85,7 +85,6 @@ const bwords = [
     "AAAXMO",  //fuck you steak
     "exceptionalindividuals.com",
     "babe", //fuck fuck you steak
-    "axmy", //fuck fuck you steak
 ] 
 
 
