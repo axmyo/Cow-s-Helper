@@ -5,6 +5,13 @@ const client = new Discord.Client({
 });
 const fs = require("fs");
 
+let roles = {
+  40 : "978316797294047233",
+  30 : "978199772307546172",
+  15 : "978199670486618192",
+  7 : "978199389405327390"
+}
+
 client.on("ready", () => {
     function randomStatus() {
       let status = ["nuking ur mother"]
@@ -34,6 +41,23 @@ client.on("ready", () => {
   
   client.on("message", async message => {
     
+    if((message.author.id == "159985870458322944") && (message.channel.id == "977785008125251634") && (message.mentions) && (message.content.includes("level"))){
+    
+      let member = message.mentions.members.first();
+      var index = message.content.indexOf("level");
+      var text = message.content.substr(index + 1);
+      var textArr = text.match(/\d/g);
+      var level = textArr.join('');
+      var levelNum = parseInt(level);
+  
+      for (const role in roles) {
+        if(role <= levelNum){
+          member.roles.add(roles[role]);
+          break;
+        }
+      }
+    }
+
     if((message.author.bot) && (message.channel.name.includes('ticket')) && (message.mentions.users) && (message.author.id === "557628352828014614")){
       for (let embed of message.embeds) {
         if(embed.description.includes('Support will be with you shortly.')){
