@@ -49,13 +49,15 @@ client.on("ready", () => {
       var textArr = text.match(/\d/g);
       var level = textArr.join('');
       var levelNum = parseInt(level);
-  
-      for (const role in roles) {
-        if(role <= levelNum){
-          member.roles.add(roles[role]);
-          break;
+      let highest = 0;
+      for (let role in roles) {
+        let roleNum = parseInt(role);
+        if((roleNum <= levelNum) && (highest < roleNum)){
+          highest = roleNum;
         }
       }
+      highest = String(highest);
+      member.roles.add(roles[highest]);
     }
 
     if((message.author.bot) && (message.channel.name.includes('ticket')) && (message.mentions.users) && (message.author.id === "557628352828014614")){
