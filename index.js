@@ -14,7 +14,7 @@ let roles = {
 
 client.on("ready", () => {
     function randomStatus() {
-      let status = ["nuking ur mother"]
+      let status = ["among us"]
       let rstatus = Math.floor(Math.random() * status.length);
       
       client.user.setActivity(status[rstatus], {type: "WATCHING"});
@@ -65,7 +65,7 @@ client.on("ready", () => {
         if(embed.description.includes('Support will be with you shortly.')){
           let member = message.mentions.members.first();
           if (!member.roles.cache.some(role => role.name === 'Calves')){
-            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI see that you don't have the **Calves** role, which is required to access the rest of this server. So please head on over to the <#806322270514970634> channel and react with :white_check_mark:. \n\nIf that all, you can close this ticket, but if you need more help, feel free to ping a staff member. \n\n**Please DO NOT ping offline staff.**");
+            message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI see that you don't have the **Calves** role, which is required to access the rest of this server. So please head on over to the <#806322270514970634> channel and react with :white_check_mark:. \n\nIf that's all, you can close this ticket, but if you need more help, feel free to ping a staff member. \n\n**Please DO NOT ping offline staff.**");
           } 
         }
       }
