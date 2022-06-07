@@ -1,9 +1,7 @@
 const Discord = require("discord.js")
 
 exports.run = async (client, message, args, level) => { 
-    if(message.author.id !=== "550692171531943956") return;
-
-exports.run = async (client, message, args, level) => { 
+    if(message.author.id !== "550692171531943956") return;
        message.guild.roles.fetch('950383380334260285')
             .then(role => {
                     console.log(`The role color is: ${role.color}`);
