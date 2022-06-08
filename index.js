@@ -105,12 +105,9 @@ const bwords = [
     "M2H_W6R87mdfZP1",
     "FreePokege", 
     "https://tenor.com/view/repost-if-add-fart-channel-gif-19348669",
-    "axmo", //fuck you steak
-    "AXMO",  //fuck you steak
-    "AAXMO",  //fuck you steak
-    "AAAXMO",  //fuck you steak
     "exceptionalindividuals.com",
-    "babe", //fuck fuck you steak
+    //im planning to use babe, reason why im removing
+   // also removed axmo, as it's not used anymore.
 ] 
 
 
