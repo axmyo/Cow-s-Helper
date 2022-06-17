@@ -8,7 +8,7 @@ exports.run = async (client, message, args, level) => {
                     console.log(`The role name is: ${role.name}`);
                     let member = message.mentions.members.first();
                     member.roles.remove(role).catch(console.error); 
-                    message.channel.send("gave 1")
+                    message.channel.send("remov: reason: sexi")
                 })
             .catch(console.error);
 
