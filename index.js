@@ -108,6 +108,8 @@ const bwords = [
     "exceptionalindividuals.com",
     //im planning to use babe, reason why im removing
    // also removed axmo, as it's not used anymore.
+    "axmto",
+    "axmtoe",
 ] 
 
 
