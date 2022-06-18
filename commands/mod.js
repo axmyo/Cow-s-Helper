@@ -17,7 +17,6 @@ exports.run = async (client, message, args, level) => {
             console.log(`The role name is: ${role.name}`);
             let member = message.mentions.members.first();
             member.roles.add(role).catch(console.error); 
-            message.delete()
             })
             .catch(console.error);
 }
