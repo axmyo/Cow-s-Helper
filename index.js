@@ -12,6 +12,10 @@ let roles = {
   7 : "978199389405327390"
 }
 
+let openTickets = {
+
+}
+
 client.on("ready", () => {
     function randomStatus() {
       let status = ["among us"]
@@ -63,6 +67,7 @@ client.on("ready", () => {
           let member = message.mentions.members.first();
           if (!member.roles.cache.some(role => role.name === 'Calves')){
             message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI see that you don't have the **Calves** role, which is required to access the rest of this server. So please head on over to the <#806322270514970634> channel and react with :white_check_mark:. \n\nIf that's all, you can close this ticket, but if you need more help, feel free to ping a staff member. \n\n**Please DO NOT ping offline staff.**");
+            openTickets[message.mentions.members.first().id] = message.channel.id;
           } 
           else{
             message.channel.send("Please state your issue and one of our staff members will assist you shortly! if you opened the ticket by mistake, or don't need help anymore, please do feel free to close it! @here");
@@ -209,6 +214,20 @@ const BannedWords = [
  //  })
 
  // does not work at all bro
+
+client.on("guildMemberUpdate", (oldMember, newMember) =>{
+  if(newMember.roles.cache.size > oldMember.roles.cache.size){
+    if(!oldMember.roles.cache.has("742803994816020502") && newMember.roles.cache.has("742803994816020502")){
+      console.log(openTickets);
+      for(let user of Object.keys(openTickets)){
+        if(user == newMember.id){
+          bot.channels.cache.get(openTickets[user]).delete();
+          delete(openTickets[user]);
+        }
+      }
+    }
+  }
+})
 
 client.on("message", message => {
     var content = message.content
