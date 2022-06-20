@@ -221,8 +221,10 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
       console.log(openTickets);
       for(let user of Object.keys(openTickets)){
         if(user == newMember.id){
-          bot.channels.cache.get(openTickets[user]).delete();
-          delete(openTickets[user]);
+          setTimeout(() => {
+            bot.channels.cache.get(openTickets[user]).delete();
+            delete(openTickets[user]);
+          }, 600000)
         }
       }
     }
