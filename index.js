@@ -65,7 +65,7 @@ client.on("ready", () => {
             message.channel.send("Hello <@" + message.mentions.users.first().id + ">, \n\nI see that you don't have the **Calves** role, which is required to access the rest of this server. So please head on over to the <#806322270514970634> channel and react with :white_check_mark:. \n\nIf that's all, you can close this ticket, but if you need more help, feel free to ping a staff member. \n\n**Please DO NOT ping offline staff.**");
           } 
           else{
-            message.channel.send("Please state your issue and one of our staff members will assist you shortly! @here");
+            message.channel.send("Please state your issue and one of our staff members will assist you shortly! if you opened the ticket by mistake, or don't need help anymore, please do feel free to close it! @here");
           }
         }
       }
