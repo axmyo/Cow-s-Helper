@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const discordTranscripts = require('discord-html-transcripts');
 const config = require("./config.json");
 const client = new Discord.Client({
   disableEveryone: true
@@ -51,6 +52,11 @@ client.on("ready", () => {
     });
   });
   
+  async function transcript(channel){
+    const attachment = await discordTranscripts.createTranscript(channel);
+    client.channels.cache.get("864780780109692969").send({files: [attachment]});
+  }
+
   client.on("message", async message => {
     
     if((message.author.id == "159985870458322944") && (message.channel.id == "977785008125251634") && (message.mentions) && (message.content.includes("level"))){
@@ -85,19 +91,7 @@ client.on("ready", () => {
     }
     
     if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
-      for (let embed of message.embeds) {
-        if(embed){
-          await new Promise(r => setTimeout(r, 5000));
-         if(embed.description.includes('Support team ticket controls')){   
-            message.channel.send("$transcript") 
-          }
-          
-          await new Promise(r => setTimeout(r, 2000));
-          if(embed.description.includes('Transcript')){   
-            message.channel.delete();
-          }
-        }
-      }
+      transcript(message.channel);
     }
 
     if(message.author.bot || message.channel.type === "dm") return;
@@ -128,7 +122,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
       for(let user of Object.keys(openTickets)){
         if(user == newMember.id){
           setTimeout(() => {
-            bot.channels.cache.get(openTickets[user]).delete();
+            client.channels.cache.get(openTickets[user]).delete();
             delete(openTickets[user]);
           }, 600000)
         }
