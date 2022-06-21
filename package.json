@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "discord-html-transcripts": "^2.5.8",
     "discord.js": "^12.5.3",
     "fs": "*"
   }
