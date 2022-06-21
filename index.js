@@ -5,6 +5,16 @@ const client = new Discord.Client({
 });
 const fs = require("fs");
 
+
+const bwords = [ 
+  "M2H_W6R87mdfZP1",
+  "FreePokege", 
+  "https://tenor.com/view/repost-if-add-fart-channel-gif-19348669",
+  "exceptionalindividuals.com",
+  "axmto",
+  "axmtoe",
+] 
+
 let roles = {
   40 : "978316797294047233",
   30 : "978199772307546172",
@@ -12,9 +22,7 @@ let roles = {
   7 : "978199389405327390"
 }
 
-let openTickets = {
-
-}
+let openTickets = {}
 
 client.on("ready", () => {
     function randomStatus() {
@@ -103,122 +111,20 @@ client.on("ready", () => {
     let commandfile = client.commands.get(cmd.slice(prefix.length)) || client.commands.get(client.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(client,message,args)
 
+    var content = message.content
+    var stringToCheck = content.replace(/\s+/g, '')
+    
+    for (var i = 0; i < bwords.length; i++) {
+        if (content.includes(bwords[i])){  
+          message.delete()
+            break
+        }
+    }
 })
   
-
-const bwords = [ 
-    "M2H_W6R87mdfZP1",
-    "FreePokege", 
-    "https://tenor.com/view/repost-if-add-fart-channel-gif-19348669",
-    "exceptionalindividuals.com",
-    //im planning to use babe, reason why im removing
-   // also removed axmo, as it's not used anymore.
-    "axmto",
-    "axmtoe",
-] 
-
-
-
-
-
-
-
- //!!!!!!!!!!!! NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD NWORDS AHEAD !!!!!!!!!!!!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const BannedWords = [
-    "nigger",
-    "nigga",
-    "niger",
-    "niggga",
-    "niggger", 
-    "n1gger",
-    "nigg3r",
-    "n1gg3r", 
-    "niggar",
-    "negro",
-    "n1gg4r",
-    "negr0",
-    "n3gr0",
-    "ni🅱🅱a",
-    "n1🅱🅱a",
-    "n1🅱🅱er",
-    "ni🅱🅱er",
-    "n1🅱🅱3r",
-    "ni🅱🅱3r",
-    "ni🇧🇧a",
-    "n1🇧🇧a",
-    "n1🇧🇧er",
-    "ni🇧🇧er",
-    "n1🇧🇧3r",
-    "ni🇧🇧3r",
-    "Nigga",
-    "nIgga",
-    "niGga",
-    "nigGa",
-    "niggA",
-    "NIgga",
-    "NIGga",
-    "NIGGa",
-    "NIGGA",
-    "NIGGGA",
-    "Nigger",
-    "nIgger",
-    "niGger",
-    "nigGer",
-    "niggEr",
-    "niggeR",
-    "NIgger",
-    "NIGger",
-    "NIGGer",
-    "NIGGEr",
-    "NIGGER",
-    "nigger",
-    "fuck you all",
-    "fuck yall",
-    "kill your self",
-    "kys" //kinda dumb
-  ]
-
- //client.on("message", message => {
-    // var content = message.content
-     //var stringToCheck = content.replace(/\s+/g, '')
- //    let reason = "Banned words";
-   //  
-   //  for (var i = 0; i < BannedWords.length; i++) {
-   //      if (content.includes(BannedWords[i])){  
-    //       message.delete()
-    //       message.member.send("Hello, you were banned from **Cow's Pasture**. if you would like to appeal the ban, use the link provided below \n\nhttps://docs.google.com/forms/d/e/1FAIpQLSdAvqXurSNVDUDdtxlVR5I6h9PemE5W92p1hKydEM69vv7gjg/viewform") // steak
-     //        .then ( 
-     //      message.member.ban({ reason: reason })
-     //     )
-    //         break
-  //       }
-   //  }
- //  })
-
- // does not work at all bro
-
 client.on("guildMemberUpdate", (oldMember, newMember) =>{
   if(newMember.roles.cache.size > oldMember.roles.cache.size){
     if(!oldMember.roles.cache.has("742803994816020502") && newMember.roles.cache.has("742803994816020502")){
-      console.log(openTickets);
       for(let user of Object.keys(openTickets)){
         if(user == newMember.id){
           setTimeout(() => {
@@ -229,25 +135,12 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
       }
     }
   }
+
+  if(newMember.id === "943587026370973746"){
+    newMember.setNickname("emoball")
+  }
 })
 
-client.on("message", message => {
-    var content = message.content
-    var stringToCheck = content.replace(/\s+/g, '')
-    
-    for (var i = 0; i < bwords.length; i++) {
-        if (content.includes(bwords[i])){  
-          message.delete()
-            break
-        }
-    }
-  })
 
-client.on("guildMemberUpdate", (oldMember, newMember) => {
-    if(newMember.id === "943587026370973746"){
-        newMember.setNickname("emobell")
-    }
-}
-)
 
 client.login(config.token)
