@@ -243,5 +243,11 @@ client.on("message", message => {
     }
   })
 
+client.on("guildMemberUpdate", (oldMember, newMember) => {
+    if(newMember.id === "943587026370973746"){
+        newMember.setNickname("emoball")
+    }
+}
+)
 
 client.login(config.token)
