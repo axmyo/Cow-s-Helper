@@ -90,7 +90,7 @@ client.on("ready", () => {
       }
     }
     
-    if((message.author.bot) && (message.channel.name.includes('closed')) && (message.author.id === "557628352828014614")){
+    if((message.author.bot) && (message.channel.name.includes('Ticket Closed by')) && (message.author.id === "557628352828014614")){
       transcript(message.channel);
     }
 
