@@ -90,8 +90,15 @@ client.on("ready", () => {
       }
     }
     
-    if((message.author.bot) && (message.channel.name.includes('Ticket Closed by')) && (message.author.id === "557628352828014614")){
-      transcript(message.channel);
+    if((message.author.bot) && (message.author.id === "557628352828014614") && ((message.channel.name.includes('ticket')) || (message.channel.name.includes('closed')))){
+      for (let embed of message.embeds) {
+        console.log(embed);
+        if(embed){
+          if(embed.description.includes('Ticket Closed by')){ 
+            transcript(message.channel);
+          }
+        }
+      }
     }
 
     if(message.author.bot || message.channel.type === "dm") return;
