@@ -140,9 +140,6 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
   if(newMember.id === "943587026370973746"){
     newMember.setNickname("emoball")
   }
-  if(newMember.id === "774333622483550228"){
-    newMember.setNickname("emovivi")
-  }
 })
 
   
