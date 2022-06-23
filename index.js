@@ -1,12 +1,11 @@
 const Discord = require('discord.js');
 const discordTranscripts = require('discord-html-transcripts');
 const config = require("./config.json");
+
 const client = new Discord.Client({
   disableEveryone: true
 });
 const fs = require("fs");
-
-
 const bwords = [ 
   "M2H_W6R87mdfZP1",
   "FreePokege", 
@@ -15,14 +14,12 @@ const bwords = [
   "axmto",
   "axmtoe",
 ] 
-
 let roles = {
   40 : "978316797294047233",
   30 : "978199772307546172",
   15 : "978199670486618192",
   7 : "978199389405327390"
 }
-
 let openTickets = {}
 
 client.on("ready", () => {
