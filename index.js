@@ -139,6 +139,9 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
   }
 })
 
+  
+
+
 
 
 client.login(config.token)

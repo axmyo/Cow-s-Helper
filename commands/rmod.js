@@ -14,9 +14,4 @@ exports.run = async (client, message, args, level) => {
             member.roles.remove(role).catch(console.error); 
             })
             .catch(console.error);
-     message.guild.roles.fetch('987972120350953476')
-        .then(role => {
-            member.roles.add(role).catch(console.error); 
-            })
-            .catch(console.error);
 }
