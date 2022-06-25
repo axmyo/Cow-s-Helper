@@ -54,7 +54,7 @@ client.on("ready", () => {
     client.channels.cache.get("864780780109692969").send({files: [attachment]});
   }
 
-  client.on("message", async message => {
+  client.on("messageCreate", async message => {
     
     if((message.author.id == "159985870458322944") && (message.channel.id == "977785008125251634") && (message.mentions) && (message.content.includes("level"))){
     
@@ -138,10 +138,5 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
     newMember.setNickname("emoball")
   }
 })
-
-  
-
-
-
 
 client.login(config.token)
