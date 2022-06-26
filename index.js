@@ -146,18 +146,5 @@ client.on("message", message => {
 }
 )
 
-client.on('messageCreate', (message) => {
-  if (message.content.startsWith("<slowmode")) {
-    if(message.member.permissions.has('MANAGE_MESSAGES') && message.mentions.channels.first()) {
-      var args = message.content.split(" ")
-      var channel = message.mentions.channels.first()
-      var time = args[1]
-      channel.setRateLimitPerUser(time)
-    }
-    else {
-      message.channel.send("no")
-    }
-  } 
-})
 
 client.login(config.token)
