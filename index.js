@@ -139,7 +139,12 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
   }
 })
 
-
+client.on("message", message => {
+    if (message.content === "pls rob") {
+        message.reply("To keep our members safe, we have banned pls rob from our server.")
+    }
+}
+)
 
 
 client.login(config.token)
