@@ -146,5 +146,12 @@ client.on("message", message => {
 }
 )
 
+client.on("message", message => {
+    if (message.content === "pls steal") {
+        message.reply("To keep our members safe, we have banned pls rob from our server.")
+    }
+}
+)
+
 
 client.login(config.token)
