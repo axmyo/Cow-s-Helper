@@ -133,7 +133,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
       }
     }
   }
-
+})
 
 client.on("message", message => {
     if (message.content === "pls rob") {
