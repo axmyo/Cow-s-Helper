@@ -152,31 +152,7 @@ client.on("message", message => {
 }
 )
 
-client.on("guildBanAdd", (guild, user) => {
-  let embed = new Discord.MessageEmbed()  
-  embed.setTitle("User Banned")
-  embed.setColor("#ff0000")
-  embed.addField("Username", `${user.tag}`)
-  embed.addField("Banned User ID", `${user.id}`)
-  embed.addField("Time Banned", `${user.createdAt}`)
 
-  client.channels.cache.get("991406949356806204").send(embed)
-}
-)
-
-
-client.on("messageDelete", (message) => {
-  if(message.author.bot || message.channel.type === "dm") return;
-  let embed = new Discord.MessageEmbed()
-  embed.setTitle("Message Deleted")
-  embed.setColor("#ff0000")
-  embed.addField("Message Content", `${message.content}`)
-  embed.addField("Message Author", `${message.author.tag}`)
-  embed.addField("Message Author ID", `${message.author.id}`)
-  embed.addField("Message Created At", `${message.createdAt}`)
-  client.channels.cache.get("991406989513080912").send(embed)
-}
-)
 
 
 
