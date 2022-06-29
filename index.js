@@ -166,6 +166,7 @@ client.on("guildBanAdd", (guild, user) => {
 
 
 client.on("messageDelete", (message) => {
+  if(message.author.bot || message.channel.type === "dm") return;
   let embed = new Discord.MessageEmbed()
   embed.setTitle("Message Deleted")
   embed.setColor("#ff0000")
