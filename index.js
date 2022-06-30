@@ -172,7 +172,7 @@ client.on("guildBanAdd", async (guild, user) => {
   embed.addField("Banned By", `${whoBanned.tag}`)
   embed.addField("Reason", `${reason}`)
   embed.addField("Time Banned", `${user.createdAt}`)
-  client.channels.cache.get("868645138770051152").send(embed)
+  client.channels.cache.get("991990337180553306").send(embed)
   
 }
 )
