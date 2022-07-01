@@ -133,9 +133,6 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
       }
     }
   }
-  if(newMember.id === "943587026370973746"){
-    newMember.setNickname("emobell")
-  }
 })
 
 client.on("message", message => {
