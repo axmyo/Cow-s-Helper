@@ -24,7 +24,7 @@ let openTickets = {}
 
 client.on("ready", () => {
     function randomStatus() {
-      let status = ["among us"]
+      let status = ["amungis"]
       let rstatus = Math.floor(Math.random() * status.length);
       
       client.user.setActivity(status[rstatus], {type: "WATCHING"});
