@@ -153,26 +153,26 @@ client.on("message", message => {
 client.on("guildBanAdd", async (guild, user) => {
   let reason = "no reason"
   let embed = new Discord.MessageEmbed()
-  const auditLogs = await guild.fetchAuditLogs({
-		limit: 1,
-		type: 'MEMBER_BAN_ADD',
-	});
-  let auditLog = auditLogs.entries.first()
-  if(auditLog.reason !== null){
-    reason = auditLog.reason
-  }
-  let whoBanned = auditLog.executor
-  embed.setTitle("User Banned")
-  embed.setColor("#ff0000")
-  embed.addField("Username", `${user.tag}`)
-  embed.addField("Banned User ID", `${user.id}`)
-  embed.addField("Banned By", `${whoBanned.tag}`)
-  embed.addField("Reason", `${reason}`)
-  embed.addField("Time Banned", `${user.createdAt}`)
-  client.channels.cache.get("991990337180553306").send(embed)
-  
-}
-)
+  setTimeout(async function(){ 
+    const auditLogs = await guild.fetchAuditLogs({
+      limit: 1,
+      type: 'MEMBER_BAN_ADD',
+    });
+    let auditLog = auditLogs.entries.first()
+    if(auditLog.reason !== null){
+      reason = auditLog.reason
+    }
+    let whoBanned = auditLog.executor
+    embed.setTitle("User Banned")
+    embed.setColor("#ff0000")
+    embed.addField("Username", `${user.tag}`)
+    embed.addField("Banned User ID", `${user.id}`)
+    embed.addField("Banned By", `${whoBanned.tag}`)
+    embed.addField("Reason", `${reason}`)
+    embed.addField("Time Banned", `${user.createdAt}`)
+    client.channels.cache.get("991990337180553306").send(embed)
+ }, 1000);
+})
 
 
 client.login(config.token)
