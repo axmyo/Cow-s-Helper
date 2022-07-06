@@ -21,6 +21,7 @@ exports.run = async (client, message, args) => {
                 .setColor("#ff0000")
                 .setFooter(message.guild.name, message.guild.iconURL())
                 .addField("**Moderation**", "HackBan")
+                .addField("**User**", `${message.guild.members.cache.get(target).user.tag}`)    
                 .addField("**ID**", `${target}`)
                 .addField("**Banned By**", message.author.username)
                 .addField("**Reason**", `${reason || "**No Reason**"}`)
