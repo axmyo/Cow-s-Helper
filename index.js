@@ -162,11 +162,18 @@ client.on("guildBanAdd", async (guild, user) => {
       reason = auditLog.reason
     }
     let whoBanned = auditLog.executor
+    if(whoBanned.id === "868564374388899940"){
+      banBy = reason.split("-")[1]
+      reason = reason.split("-")[0]
+    }
+    else{
+      banBy = whoBanned.tag + " [" + whoBanned.id + "]"
+    }
     embed.setTitle("User Banned")
     embed.setColor("#ff0000")
     embed.addField("Username", `${user.tag}`)
     embed.addField("Banned User ID", `${user.id}`)
-    embed.addField("Banned By", `${whoBanned.tag}`)
+    embed.addField("Banned By", `${banBy}`)
     embed.addField("Reason", `${reason}`)
     embed.addField("Time Banned", `${user.createdAt}`)
     client.channels.cache.get("991990337180553306").send(embed)
