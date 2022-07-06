@@ -17,17 +17,6 @@ exports.run = async (client, message, args) => {
             try {
                 message.guild.members.ban(target, {reason: reason.length < 1 ? 'No reason supplied.': reason});            
                     message.delete()
-            const embed = new MessageEmbed()
-                .setColor("#ff0000")
-                .setFooter(message.guild.name, message.guild.iconURL())
-                .addField("**Moderation**", "HackBan")
-                .addField("**User**", `${message.guild.members.cache.get(target).user.tag}`)    
-                .addField("**ID**", `${target}`)
-                .addField("**Banned By**", message.author.username)
-                .addField("**Reason**", `${reason || "**No Reason**"}`)
-                .addField("**Date**", message.createdAt.toLocaleString())
-                .setTimestamp();
-            logs.send(embed)
             
             } catch (error) { console.log(error)}
     }
