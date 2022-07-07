@@ -97,6 +97,10 @@ client.on("ready", () => {
       }
     }
 
+    if ((message.content === "pls steal") || (message.content === "pls rob")){ 
+      message.reply("To keep our members safe, we have banned pls rob from our server.")
+    }
+
     if(message.author.bot || message.channel.type === "dm") return;
 
     let prefix = ("<");
@@ -133,20 +137,6 @@ client.on("guildMemberUpdate", (oldMember, newMember) =>{
     }
   }
 })
-
-client.on("message", message => {
-    if (message.content === "pls rob") {
-        message.reply("To keep our members safe, we have banned pls rob from our server.")
-    }
-}
-)
-
-client.on("message", message => {
-    if (message.content === "pls steal") {
-        message.reply("To keep our members safe, we have banned pls rob from our server.")
-    }
-}
-)
 
 
 client.on("guildBanAdd", async (guild, user) => {
