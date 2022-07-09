@@ -170,13 +170,6 @@ client.on("guildBanAdd", async (guild, user) => {
  }, 1000);
 })
 
-client.on("message", async message => {
-  if(message.author.id === "730774577474568222"){
-    message.delete()
-    message.author.send("no talking >:(")
-  }
-}
-)
 
 
 client.login(process.env.DJS_TOKEN)
