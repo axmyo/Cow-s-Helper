@@ -170,11 +170,6 @@ client.on("guildBanAdd", async (guild, user) => {
  }, 1000);
 })
 
-client.on("guildMemberUpdate", async (oldMember, newMember) =>{
-  if(newMember.id === "943587026370973746"){
-    newMember.setNickname("emobell")
-  }
-}
 )
 
 client.login(process.env.DJS_TOKEN)
