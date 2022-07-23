@@ -170,6 +170,6 @@ client.on("guildBanAdd", async (guild, user) => {
  }, 1000);
 })
 
-)
+
 
 client.login(process.env.DJS_TOKEN)
